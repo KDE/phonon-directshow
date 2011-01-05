@@ -9,5 +9,23 @@ X-KDE-PhononBackendInfo-Website=http://qt.nokia.com/
 InitialPreference=15
 
 Name=DirectShow9
+Name[cs]=DirectShow9
+Name[es]=DirectShow9
+Name[it]=DirectShow9
+Name[nl]=DirectShow9
+Name[pt]=DirectShow9
+Name[pt_BR]=DirectShow9
+Name[sv]=DirectShow 9
+Name[uk]=DirectShow9
+Name[x-test]=xxDirectShow9xx
 
 Comment=Phonon DirectShow9 backend
+Comment[cs]=Podpůrná vrstva DirectShow9 pro Phonon
+Comment[es]=Motor DirectShow9 para Phonon
+Comment[it]=Motore DirectShow9 di Phonon
+Comment[nl]=DirectShow9-backend van Phonon
+Comment[pt]=Infra-estrutura do DirectShow9 para o Phonon
+Comment[pt_BR]=Infraestrutura do DirectShow9 para o Phonon
+Comment[sv]=Phonon Directshow 9-gränssnitt
+Comment[uk]=Модуль DirectShow9 для Phonon
+Comment[x-test]=xxPhonon DirectShow9 backendxx
