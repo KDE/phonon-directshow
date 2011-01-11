@@ -10,6 +10,7 @@ InitialPreference=15
 
 Name=DirectShow9
 Name[ca]=DirectShow9
+Name[ca@valencia]=DirectShow9
 Name[cs]=DirectShow9
 Name[da]=DirectShow9
 Name[es]=DirectShow9
@@ -25,6 +26,7 @@ Name[x-test]=xxDirectShow9xx
 
 Comment=Phonon DirectShow9 backend
 Comment[ca]=Dorsal DirectShow9 del Phonon
+Comment[ca@valencia]=Dorsal DirectShow9 del Phonon
 Comment[cs]=Podpůrná vrstva DirectShow9 pro Phonon
 Comment[da]=Phonon DirectShow9-motor
 Comment[es]=Motor DirectShow9 para Phonon
