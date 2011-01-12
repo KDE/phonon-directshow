@@ -48,8 +48,9 @@ if (BUILD_PHONON_DS9)
                 dxguid strmiids dmoguids msdmo ole32 oleaut32 uuid gdi32)
     # 'MODULE' is treated as a LIBRARY
     install(TARGETS phonon_ds9
-	    RUNTIME DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
-	    LIBRARY DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
-	    ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
-    install(FILES ds9.desktop DESTINATION ${SERVICES_INSTALL_DIR}/phononbackends)
+            RUNTIME DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
+            LIBRARY DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
+            ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+    configure_file(ds9.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop DESTINATION ${SERVICES_INSTALL_DIR}/phononbackends)
 endif (BUILD_PHONON_DS9)
