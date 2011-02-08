@@ -38,13 +38,13 @@ if (BUILD_PHONON_DS9)
             qasyncreader.cpp
             qaudiocdreader.cpp
             qmeminputpin.cpp
-	)
+    )
 
     add_definitions(-DPHONON_MAKE_QT_ONLY_BACKEND -DUNICODE)
     automoc4_add_library(phonon_ds9 MODULE ${phonon_ds9_SRCS})
     set_target_properties(phonon_ds9 PROPERTIES PREFIX "")
     target_link_libraries(phonon_ds9
-                ${PHONON_LIBS}  ${QT_QTOPENGL_LIBRARY} ${OPENGL_gl_LIBRARY}
+                ${PHONON_LIBS}  ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTOPENGL_LIBRARY} ${OPENGL_gl_LIBRARY}
                 dxguid strmiids dmoguids msdmo ole32 oleaut32 uuid gdi32)
     # 'MODULE' is treated as a LIBRARY
     install(TARGETS phonon_ds9
