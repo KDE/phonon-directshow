@@ -15,7 +15,7 @@ project(phonon-ds9)
 include(ConfigureChecks.cmake)
 
 if (BUILD_PHONON_DS9)
-    find_package(OPENGL REQUIRED)
+    find_package(OpenGL REQUIRED)
 
     include_directories($ENV{DXDSDK_DIR}/include $ENV{DXSDK_DIR})
     set(phonon_ds9_SRCS
