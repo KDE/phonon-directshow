@@ -29,6 +29,7 @@ Name[sr@ijekavian]=Дајректшоу‑9
 Name[sr@ijekavianlatin]=DirectShow‑9
 Name[sr@latin]=DirectShow‑9
 Name[sv]=DirectShow 9
+Name[ug]=DirectShow9
 Name[uk]=DirectShow9
 Name[x-test]=xxDirectShow9xx
 Name[zh_TW]=DirectShow9
