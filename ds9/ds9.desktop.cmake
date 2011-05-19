@@ -9,6 +9,7 @@ X-KDE-PhononBackendInfo-Website=http://qt.nokia.com/
 InitialPreference=15
 
 Name=DirectShow9
+Name[bs]=DirectShow9
 Name[ca]=DirectShow9
 Name[ca@valencia]=DirectShow9
 Name[cs]=DirectShow9
