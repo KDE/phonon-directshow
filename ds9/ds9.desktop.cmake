@@ -36,6 +36,7 @@ Name[sv]=DirectShow 9
 Name[ug]=DirectShow9
 Name[uk]=DirectShow9
 Name[x-test]=xxDirectShow9xx
+Name[zh_CN]=DirectShow9
 Name[zh_TW]=DirectShow9
 
 Comment=Phonon DirectShow9 backend
@@ -65,4 +66,5 @@ Comment[sr@latin]=DirectShow‑9 kao pozadina Phonona
 Comment[sv]=Phonon Directshow 9-gränssnitt
 Comment[uk]=Модуль DirectShow9 для Phonon
 Comment[x-test]=xxPhonon DirectShow9 backendxx
+Comment[zh_CN]=Phonon DirectShow9 后端
 Comment[zh_TW]=Phonon DirectShow9 後端介面
