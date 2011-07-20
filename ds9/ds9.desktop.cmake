@@ -9,6 +9,7 @@ X-KDE-PhononBackendInfo-Website=http://qt.nokia.com/
 InitialPreference=15
 
 Name=DirectShow9
+Name[bg]=DirectShow9
 Name[bs]=DirectShow9
 Name[ca]=DirectShow9
 Name[ca@valencia]=DirectShow9
@@ -40,6 +41,7 @@ Name[zh_CN]=DirectShow9
 Name[zh_TW]=DirectShow9
 
 Comment=Phonon DirectShow9 backend
+Comment[bg]=Ядро DirectShow9 за Phonon
 Comment[bs]=DirectShow9 kao pozadina Phonona
 Comment[ca]=Dorsal DirectShow9 del Phonon
 Comment[ca@valencia]=Dorsal DirectShow9 del Phonon
