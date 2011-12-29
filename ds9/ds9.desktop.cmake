@@ -19,6 +19,7 @@ Name[de]=DirectShow9
 Name[el]=DirectShow9
 Name[es]=DirectShow9
 Name[et]=DirectShow9
+Name[ga]=DirectShow9
 Name[gl]=DirectShow9
 Name[hu]=DirectShow9
 Name[it]=DirectShow9
