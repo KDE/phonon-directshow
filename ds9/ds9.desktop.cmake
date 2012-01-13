@@ -56,6 +56,7 @@ Comment[de]=Phonon-Treiber für DirectShow9
 Comment[el]=Σύστημα υποστήριξης DirectShow9 του Phonon
 Comment[es]=Motor DirectShow9 para Phonon
 Comment[et]=Phononi DirectShow9 taustaprogramm
+Comment[ga]=Inneall DirectShow9 Phonon
 Comment[gl]=Infraestrutura de DirectShow9 para Phonon
 Comment[hu]=Phonon DirectShow9-modul
 Comment[it]=Motore DirectShow9 di Phonon
