@@ -22,7 +22,6 @@
 #      msdmo.lib
 include(CheckCXXSourceCompiles)
 
-macro_push_required_vars()
 
 set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${CMAKE_INCLUDE_PATH} $ENV{DXSDK_DIR} $ENV{DXSDK_DIR}/include)
 set(CMAKE_REQUIRED_LIBRARIES ${CMAKE_REQUIRED_LIBRARIES} dxguid strmiids dmoguids msdmo)
@@ -35,7 +34,6 @@ CHECK_CXX_SOURCE_COMPILES(
 
 int main() { }" BUILD_PHONON_DS9)
 
-macro_pop_required_vars()
 
 if (BUILD_PHONON_DS9)
    message(STATUS "Found DirectShow 9 support: $ENV{DXSDK_DIR}")
