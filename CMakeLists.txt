@@ -15,7 +15,7 @@ set(PHONON_DS9_PATCH_VERSION "0")
 set(PHONON_DS9_VERSION "${PHONON_DS9_MAJOR_VERSION}.${PHONON_DS9_MINOR_VERSION}.${PHONON_DS9_PATCH_VERSION}")
 add_definitions(-DPHONON_DS9_VERSION="${PHONON_DS9_VERSION}")
 
-add_subdirectory(ds9)
+add_subdirectory(src)
 
 
 macro_display_feature_log()
