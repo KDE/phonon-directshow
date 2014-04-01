@@ -1,0 +1,9 @@
+{
+    "Name": "Phonon DS9",
+    "Icon": "ds9",
+    "Version": "@PHONON_DS9_VERSION@",
+    "Website": "http://phonon.kde.org/",
+
+    "InterfaceVersion": 0,
+    "InitialPreference": 15
+}
