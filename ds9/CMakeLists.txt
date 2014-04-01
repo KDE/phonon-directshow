@@ -14,43 +14,60 @@
 project(phonon-ds9)
 include(ConfigureChecks.cmake)
 
-if (BUILD_PHONON_DS9)
-    find_package(OpenGL REQUIRED)
+find_package(OpenGL REQUIRED)
 
-    include_directories($ENV{DXDSDK_DIR}/include $ENV{DXSDK_DIR})
-    set(phonon_ds9_SRCS
-            abstractvideorenderer.cpp
-            audiooutput.cpp
-            backend.cpp
-            backendnode.cpp
-            effect.cpp
-            fakesource.cpp
-            iodevicereader.cpp
-            mediagraph.cpp
-            mediaobject.cpp
-            videowidget.cpp
-            videorenderer_evr.cpp
-            videorenderer_vmr9.cpp
-            videorenderer_soft.cpp
-            volumeeffect.cpp
-            qbasefilter.cpp
-            qpin.cpp
-            qasyncreader.cpp
-            qaudiocdreader.cpp
-            qmeminputpin.cpp
-    )
+include_directories($ENV{DXDSDK_DIR}/include $ENV{DXSDK_DIR})
+set(phonon_ds9_SRCS
+        abstractvideorenderer.cpp
+        audiooutput.cpp
+        backend.cpp
+        backendnode.cpp
+        effect.cpp
+        fakesource.cpp
+        iodevicereader.cpp
+        mediagraph.cpp
+        mediaobject.cpp
+        videowidget.cpp
+        videorenderer_evr.cpp
+        videorenderer_vmr9.cpp
+        videorenderer_soft.cpp
+        volumeeffect.cpp
+        qbasefilter.cpp
+        qpin.cpp
+        qasyncreader.cpp
+        qaudiocdreader.cpp
+        qmeminputpin.cpp
+)
 
-    add_definitions(-DPHONON_MAKE_QT_ONLY_BACKEND -DUNICODE)
-    automoc4_add_library(phonon_ds9 MODULE ${phonon_ds9_SRCS})
-    set_target_properties(phonon_ds9 PROPERTIES PREFIX "")
-    target_link_libraries(phonon_ds9
-                ${PHONON_LIBS}  ${QT_QTCORE_LIBRARY} ${QT_QTGUI_LIBRARY} ${QT_QTOPENGL_LIBRARY} ${OPENGL_gl_LIBRARY}
-                dxguid strmiids dmoguids msdmo ole32 oleaut32 uuid gdi32)
-    # 'MODULE' is treated as a LIBRARY
+add_definitions(-DPHONON_MAKE_QT_ONLY_BACKEND -DUNICODE)
+automoc4_add_library(phonon_ds9 MODULE ${phonon_ds9_SRCS})
+set_target_properties(phonon_ds9 PROPERTIES PREFIX "")
+target_link_libraries(phonon_ds9
+            ${PHONON_LIBRARY} ${OPENGL_gl_LIBRARY}
+            dxguid strmiids dmoguids msdmo ole32 oleaut32 uuid gdi32)
+
+qt5_use_modules(phonon_ds9 Core Widgets)
+
+
+
+if(PHONON_BUILD_PHONON4QT5)
+    # Instead of desktop files we are embedding the information into the plugin itself.
+    # We have no KDE technology to help with finding the actual libraries anyway, so
+    # we need to have the library path anyway.
+    # Also see qtplugin/Q_PLUGIN_METADATA documentation.
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/phonon-ds9.json.in
+                   ${CMAKE_CURRENT_BINARY_DIR}/phonon-ds9.json @ONLY)
+    install(TARGETS phonon_ds9
+            RUNTIME DESTINATION ${BIN_INSTALL_DIR}/phonon4qt5_backend
+            LIBRARY DESTINATION ${BIN_INSTALL_DIR}/phonon4qt5_backend
+            ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+
+else()
+    configure_file(ds9.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop @ONLY)
+    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop DESTINATION ${SERVICES_INSTALL_DIR}/phononbackends)
     install(TARGETS phonon_ds9
             RUNTIME DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
             LIBRARY DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
             ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
-    configure_file(ds9.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop)
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop DESTINATION ${SERVICES_INSTALL_DIR}/phononbackends)
-endif (BUILD_PHONON_DS9)
+endif()
+

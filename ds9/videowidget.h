@@ -18,7 +18,7 @@ along with this library.  If not, see <http://www.gnu.org/licenses/>.
 #ifndef PHONON_VIDEOWIDGET_H
 #define PHONON_VIDEOWIDGET_H
 
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <phonon/videowidgetinterface.h>
 #include "backendnode.h"
 

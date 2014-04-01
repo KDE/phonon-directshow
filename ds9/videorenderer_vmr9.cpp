@@ -20,8 +20,8 @@ along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef QT_NO_PHONON_VIDEO
 
-#include <QtGui/QWidget>
-#include <QtGui/QPainter>
+#include <QWidget>
+#include <QPainter>
 
 #include <d3d9.h>
 #include <vmr9.h>
@@ -106,11 +106,17 @@ namespace Phonon
        
         void VideoRendererVMR9::repaintCurrentFrame(QWidget *target, const QRect &rect)
         {
+            HWND hwnd = (HWND)target->winId();
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+            HDC hDC = GetDC(hwnd);
+#else
             HDC hDC = target->getDC();
+#endif
+
             // repaint the video
             ComPointer<IVMRWindowlessControl9> windowlessControl(m_filter, IID_IVMRWindowlessControl9);
 
-            HRESULT hr = windowlessControl ? windowlessControl->RepaintVideo(target->winId(), hDC) : E_POINTER;
+            HRESULT hr = windowlessControl ? windowlessControl->RepaintVideo(hwnd, hDC) : E_POINTER;
             if (FAILED(hr) || m_dstY > 0 || m_dstX > 0) {
                 const QColor c = target->palette().color(target->backgroundRole());
                 COLORREF color = RGB(c.red(), c.green(), c.blue());
@@ -135,7 +141,11 @@ namespace Phonon
                 ::DeleteObject(hPen);
                 ::DeleteObject(hBrush);
             }
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+            ReleaseDC(hwnd,hDC);
+#else
             target->releaseDC(hDC);
+#endif
 
         }
 

@@ -192,7 +192,7 @@ namespace Phonon
             m_widget = new VideoWindow(parent, this);
 
             //initialization of the renderers
-            qMemSet(m_renderers, 0, sizeof(m_renderers));
+            memset(m_renderers, 0, sizeof(m_renderers));
 
             for(int i = 0; i< FILTER_COUNT ;++i) {
                 //This might return a non native (ie Qt) renderer in case native is not supported

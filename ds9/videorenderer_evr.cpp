@@ -21,7 +21,7 @@ along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #ifndef QT_NO_PHONON_VIDEO
 
-#include <QtGui/QWidget>
+#include <QWidget>
 #include <QtGui/QPainter>
 
 QT_BEGIN_NAMESPACE

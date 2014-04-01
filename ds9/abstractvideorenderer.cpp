@@ -17,8 +17,8 @@ along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "abstractvideorenderer.h"
 
-#include <QtGui/QApplication>
-#include <QtGui/QDesktopWidget>
+#include <QApplication>
+#include <QDesktopWidget>
 
 QT_BEGIN_NAMESPACE
 

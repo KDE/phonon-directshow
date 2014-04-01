@@ -35,7 +35,9 @@ along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 QT_BEGIN_NAMESPACE
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
 Q_EXPORT_PLUGIN2(phonon_ds9, Phonon::DS9::Backend);
+#endif
 
 namespace Phonon
 {

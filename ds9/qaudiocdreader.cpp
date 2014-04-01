@@ -142,7 +142,7 @@ namespace Phonon
 
             m_cddrive = ::CreateFile((const wchar_t *)path.utf16(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, 0, NULL);
 
-            qMemSet(&m_toc, 0, sizeof(CDROM_TOC));
+            memset(&m_toc, 0, sizeof(CDROM_TOC));
             //read the TOC
             DWORD bytesRead = 0;
             bool tocRead = ::DeviceIoControl(m_cddrive, IOCTL_CDROM_READ_TOC, 0, 0, &m_toc, sizeof(CDROM_TOC), &bytesRead, 0);

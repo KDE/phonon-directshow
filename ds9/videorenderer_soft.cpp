@@ -25,7 +25,7 @@ along with this library.  If not, see <http://www.gnu.org/licenses/>.
 
 #include <QtGui/QPainter>
 #include <QtGui/QPaintEngine>
-#include <QtGui/QApplication>
+#include <QApplication>
 #include <QtCore/QTime>
 
 #define _USE_MATH_DEFINES //for pi
