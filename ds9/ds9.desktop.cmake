@@ -5,7 +5,7 @@ MimeType=application/x-annodex;video/quicktime;video/x-quicktime;audio/x-m4a;app
 X-KDE-Library=phonon_ds9
 X-KDE-PhononBackendInfo-InterfaceVersion=1
 X-KDE-PhononBackendInfo-Version=@PHONON_DS9_VERSION@
-X-KDE-PhononBackendInfo-Website=http://qt.nokia.com/
+X-KDE-PhononBackendInfo-Website=http://phonon.kde.org/
 InitialPreference=15
 
 Name=DirectShow9
