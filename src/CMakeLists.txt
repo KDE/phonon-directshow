@@ -48,7 +48,7 @@ target_link_libraries(phonon_ds9
 
 qt5_use_modules(phonon_ds9 Core Widgets)
 
-
+install(TARGETS phonon_ds9 DESTINATION ${BACKEND_INSTALL_DIR})
 
 if(PHONON_BUILD_PHONON4QT5)
     # Instead of desktop files we are embedding the information into the plugin itself.
@@ -57,17 +57,10 @@ if(PHONON_BUILD_PHONON4QT5)
     # Also see qtplugin/Q_PLUGIN_METADATA documentation.
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/phonon-ds9.json.in
                    ${CMAKE_CURRENT_BINARY_DIR}/phonon-ds9.json @ONLY)
-    install(TARGETS phonon_ds9
-            RUNTIME DESTINATION ${BIN_INSTALL_DIR}/phonon4qt5_backend
-            LIBRARY DESTINATION ${BIN_INSTALL_DIR}/phonon4qt5_backend
-            ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
+
 
 else()
     configure_file(ds9.desktop.cmake ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop @ONLY)
     install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ds9.desktop DESTINATION ${SERVICES_INSTALL_DIR}/phononbackends)
-    install(TARGETS phonon_ds9
-            RUNTIME DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
-            LIBRARY DESTINATION ${BIN_INSTALL_DIR}/phonon_backend
-            ARCHIVE DESTINATION ${LIB_INSTALL_DIR})
 endif()
 
